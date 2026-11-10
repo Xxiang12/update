@@ -4,8 +4,8 @@ from openpyxl.utils import get_column_letter
 from copy import copy
 import io
 
-st.set_page_config(page_title="多表合并(保留格式)", page_icon="📊")
-st.title("📊 多表合并工具 (去尾行 & 保留格式)")
+st.set_page_config(page_title="多表合并", page_icon="📊")
+st.title("📊 多表合并工具")
 st.write("请上传多个表头一致的 Excel 文件。")
 
 # 表头行配置
@@ -68,7 +68,7 @@ if uploaded_files:
                     is_first_file = False
 
                 # 【 2：精确截断】
-                # 数据区是从 表头下一行 开始，到 (真实最后一行 - 1) 结束
+                # 数据区是从 表头下一行开始，到 (真实最后一行 - 1) 结束
                 # 比如真实最后一行是 20，range(表头+1, 20) 只会循环到 19，完美去掉最后一行
                 for r in range(header_row + 1, real_max_row):
                     for c in range(1, max_col + 1):
