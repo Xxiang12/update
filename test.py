@@ -1,6 +1,3 @@
-from st_launch import launch
-launch()
-
 import streamlit as st
 import pandas as pd
 import io
